@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+    nginx:
+        image: nginx
+        # container_name: nginx
+        volumes:
+            - ./nginx.conf:/etc/nginx/nginx.conf:ro
+        ports:
+            - 80:80
+    node:
+        build: ./node_app
+        depends_on:
+            - nginx
+
