@@ -12,4 +12,9 @@ services:
         build: ./node_app
         depends_on:
             - nginx
-
+    php:
+        build: ./php_app
+        # volumes:
+        #     - ./php_app:/var/www/html
+        depends_on:
+            - nginx
